@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <m-radio data='["Beijing","Shanghai","Shenzhen","Huizhou"]' index=0></m-radio>
+         <m-radio data='["Beijing","Shanghai","Shenzhen","Huizhou"]' index=1 ></m-radio>
+        <!-- <m-radio></m-radio> -->
+    </div>
+    <script>
+        class MRadio extends HTMLElement{
+                 constructor(){
+                    super();//child element overrides parent element constructor function
+                    let shadow=this.attachShadow({
+                        mode:'open'
+                    });
+                    // console.log(this.getAttribute('data'));
+                    let data=[];
+                    try{
+                         data=JSON.parse(this.getAttribute("data"));
+                         index=this.getAttribute("index")||0;
+                    }catch(e){
+                          throw new Error('please pass data');
+                    }
+                    console.log(data);
+                    let style=document.createElement('style');
+                    style.textContent=`
+                    .box {
+                      margin: 100px auto 0;
+                      width: 80%;
+                     }
+                    .radio .item {
+                        float: left;
+                        padding: 12px 25px;
+                        margin-left: -1px;
+                        height: 40px;
+                        border: 1px solid #dcdcdc;
+                        background: #fff;
+                        cursor: pointer;
+                        font-size: 16px;
+                        line-height: 40px;
+                        text-align: center;
+                        transition: .2s all;
+                    }
+
+                    .radio .item:hover {
+                        box-shadow: inset 0 0 130px #409eff;
+                        color: #fff;
+                    }
+
+                    .radio .item:first-child {
+                        border-radius: 5px 0 0 5px;
+                    }
+
+                    .radio .item:last-child {
+                        border-radius: 0 5px 5px 0;
+                    }
+
+                    .radio .item.checked {
+                        box-shadow: inset 0 0 130px #409eff;
+                        color: #fff;
+                    }
+                      .clear:after {
+                       content: '';
+                       display: block;
+                       clear: both;
+                   }
+                       .tab {
+                        width: 600px;
+                        border: 1px solid #dcdfe6;
+                        box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+                    }
+                    ul {
+                        margin: 0;
+                        padding: 0;
+                        list-style: none;
+                        background: #f5f7fa;
+                        border-bottom: 1px solid #e4e7ed;
+                        position: relative;
+                    }
+                    li {
+                        float: left;
+                        padding: 0 20px;
+                        margin: 0 0 -1px -1px;
+                        position: relative;
+                        height: 40px;
+                        border: 1px solid transparent;
+                        line-height: 40px;
+                        cursor: pointer;
+                        transition: .2s all;
+                    }
+                    li:hover {
+                        color: rgb(64, 158, 255);
+                    }
+                    li.active {
+                        background: #fff;
+                        border-right-color: #dcdfe6;
+                        border-left-color: #dcdfe6;
+                        color: rgb(64, 158, 255);
+                    }
+                    .tab .content {
+                       padding: 10px;
+                    }
+                      `;
+                   shadow.appendChild(style);
+                   let container=document.createElement('div');
+                   container.classList.add('box');
+                   let str=data.map((item,n)=>{
+                     if(n==index){
+                      return `<li class="item checked">${item}</li>`
+                     }else{
+                       return `<li class="item">${item}</li>`
+                     }
+                   }).join('');
+                   container.innerHTML=
+                   `
+                       <ul class="radio clear">
+                         ${str}
+                       </ul>
+                    `;
+                    shadow.appendChild(container);
+                 }
+        }
+        customElements.define('m-radio',MRadio);
+    </script>
+</body>
+</html>
