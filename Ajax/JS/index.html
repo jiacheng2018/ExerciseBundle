@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h2>The XMLHttpRequest Object</h2>
+	<p id="demo"> Let begin</p>
+	<button type="button" onclick="Load()">Change content</button>
+	<script>
+		function Load(){
+            var xhttp;
+            if(window.XMLHttpRequest){
+            	xhttp=new XMLHttpRequest();
+            }else{
+            	xhttp=new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xhttp.onreadystatechange=function(){
+            	if(this.readyState==4 && this.status==200){
+            		document.getElementById("demo").innerHTL=this.responseText;
+            	}
+            };
+            xhttp.open("GET","info.txt",true);
+            xhttp.send();
+		}
+	</script>
+</body>
+</html>
