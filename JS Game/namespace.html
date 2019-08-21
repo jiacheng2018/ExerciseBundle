@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var myApp=myApp||{};
+		myApp.utils={};
+		(function(){
+			var val=5;
+			this.getValue=function(){
+				return val;
+			}
+			this.setValue=function(newVal){
+				val=newVal;
+			}
+			this.tool={};
+		}).apply(myApp.utils);
+		(function(){
+			this.diagnose=function(){
+				return "diagnose"
+			}
+		}).apply(myApp.utils.tool);
+		console.log(myApp);
+		console.log(myApp.utils.getValue());
+		myApp.utils.setValue(25);
+		console.log(myApp.utils.getValue());
+		console.log(myApp.utils.tool.diagnose());
+	</script>
+</body>
+</html>

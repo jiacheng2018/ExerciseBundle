@@ -1,0 +1,26 @@
+<body>
+<script type="text/javascript">
+function thisTest()
+  {
+      this.textValue = 'this的dom测试';
+      this.element= document.createElement('span');
+      this.element.innerHTML = this.textValue;
+      this.element.style.color = "blue";
+      this.element.style.cursor = "pointer";
+      this.element.addEventListener('onclick', this.ToString);
+  }
+   
+  thisTest.prototype.RenderDom = function()
+  {
+      document.body.appendChild(this.element);
+  }     
+
+  thisTest.prototype.ToString = function()
+  {
+      console.log("单击我："+this.textValue);
+  };
+  var test= new thisTest();
+  test.RenderDom(); 
+  //test.ToString();
+</script>
+</body>

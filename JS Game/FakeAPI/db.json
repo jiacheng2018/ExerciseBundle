@@ -1,0 +1,48 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john@gmail.com",
+      "age": 34,
+      "companyId": "1"
+    },
+    {
+      "id": "2",
+      "firstName": "Mark",
+      "lastName": "De",
+      "email": "exerice@gmail.com",
+      "age": 36,
+      "companyId": "2"
+    },
+    {
+      "id": "3",
+      "firstName": "Tween",
+      "lastName": "domw",
+      "email": "exerice@outlook.com",
+      "age": 29,
+      "companyId": "2"
+    },
+    {
+      "firstName": "Tween",
+      "lastName": "domw",
+      "email": "exerice@outlook.com",
+      "age": 29,
+      "companyId": "2",
+      "id": "Oj0IrZ8"
+    }
+  ],
+  "companies": [
+    {
+      "id": "1",
+      "name": "Apple",
+      "Description": "Apple Inc"
+    },
+    {
+      "id": "2",
+      "name": "Sam Sung",
+      "Description": "Sam Sung Inc"
+    }
+  ]
+}

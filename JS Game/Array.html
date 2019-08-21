@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function pushPop(){
+			var fifoArray=new Array();
+			fifoArray.push("Apple");
+			fifoArray.push("Banana");
+			var ln=fifoArray.push("Cherry");
+			console.log("length is"+ln+"and array is"+fifoArray+"<br/>");
+			for(var i=0;i<ln;i++){
+				document.writeln(fifoArray.shift()+"<br/>");
+			}
+		}
+	</script>
+</body>
+</html>

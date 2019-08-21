@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.css">
+</head>
+<body>
+	<div class="container">
+		 <h1 class="center-align">
+		 	My Contacts
+		 </h1>
+		 <input type="text" id="filterInput"  placeholder="Search for names...">
+		 <ul id="names" class="collection with-header">
+		 	<li class="collection-header">
+		 		<h5>A</h5>
+		 	</li>
+		 	<li class="collection-item">
+		 		<a href="">Abe</a>
+		 	</li>
+		 	<li class="collection-item">
+		 		<a href="">Arindam</a>
+		 	</li>
+		 	<li class="collection-item">
+		 		<a href="">Cathy</a>
+		 	</li>
+		 	<li class="collection-item">
+		 		<a href="">Courtney</a>
+		 	</li>
+		 	<li class="collection-item">
+		 		<a href="">Benary</a>
+		 	</li>
+		 </ul>
+	</div>
+	<script>
+		let filterInput=document.getElementById("filterInput");
+        filterInput.addEventListener('keyup',filterNames);
+        function filterNames(){
+        	filterValue=filterInput.value.toUpperCase();
+        	let ul=document.getElementById('names');
+        	let li = ul.querySelectorAll('li.collection-item');
+        	for(let i=0;i<li.length;i++){
+        		let a=li[i].getElementsByTagName('a')[0];
+        		if(a.innerHTML.toUpperCase().indexOf(filterValue)>-1){
+        			li[i].style.display='';
+        		}else{
+        			li[i].style.display='none';
+        		}
+        	}
+        }
+  WrongExample:
+     var input=document.getElementById("filterInput");
+     input.addEventListener('keyup',filternames);
+     function filternames(){
+     	  var filtervalue=input.value.toUpperCase();
+          let ul=document.getElementById('names');
+          var li = ul.querySelectorAll('li.collection-item');
+          for(let i=0;i<li.length;i++){
+          	let a=document.getElementsByTagName('a')[0];
+          	if(a.innerHTML.toUpperCase().indexOf(filtervalue)>-1){
+          		li[i].style.display='';
+          	}else{
+          		li[i].style.display='none';
+          	}
+          }
+     }
+	</script>
+</body>
+</html>

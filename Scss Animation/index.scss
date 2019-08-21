@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container { 
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  font-family: 'Oswald', helvetica;
+  background-color: #333;
+  color: #fff;
+  height: 100vh;
+  font-size: 30px;
+
+  h1 {
+    position: relative;
+    
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background: white;
+      width: 2px;
+      margin: auto 0;
+      top: 5px;
+      bottom: 0;
+    }
+    
+    &::before {
+      left: 50%;
+      animation: leftSlide 1.3s cubic-bezier(0.68, -0.55, 0.265, 1.50) forwards;
+    }
+    
+    &::after {
+      animation: rightSlide 1.3s cubic-bezier(0.68, -0.55, 0.265, 1.50) forwards;
+    }
+    
+    span {
+      letter-spacing: 3px;
+      font-weight: 300;
+      display: inline-block;
+      opacity: 0;
+      text-transform: uppercase;
+      animation-iteration-count: 1;
+      animation: fadeIn forwards 0.8s ease-out;
+    }
+
+    @for $i from 1 through 5 {
+      span:nth-child(#{$i}) {
+        animation-delay: ((5 - $i) * 0.1s) + 0.4s;
+      }  
+    }
+    @for $i from 0 through 4 {
+      span:nth-child(#{($i + 6)}) {
+        animation-delay: (($i) * 0.1s) + 0.4s;
+      }  
+    }
+  }
+}
+
+
+@keyframes fadeIn {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes leftSlide {
+  0% {
+    opacity: 0;
+    left: 50%;
+    height: 5%;
+  }
+  100% {
+    opacity: 1;
+    left: -6%;
+    height: 75%;
+  }
+}
+
+@keyframes rightSlide {
+  0% {
+    opacity: 0;
+    right: 50%;
+    height: 5%;
+  }
+  100% {
+    opacity: 1;
+    right: -6%;
+    height: 75%;
+  }
+}

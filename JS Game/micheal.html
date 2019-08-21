@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button onclick="getIndex()">Click me</button>
+	<div id="demo"></div>
+	<script>
+		// var age=[3,10,18,29];
+		// function checkAdult(age){
+		// 	return age>=18;
+		// }
+		// function myFunction(){
+		// 	document.getElementById("demo").innerHTML=age.findIndex(checkAdult)
+		// }
+		var age=[0,10,9,1]
+		function getIndex(item){
+			return item>18;
+		}
+        document.getElementById("demo").innerHTML=age.findIndex(getIndex);
+	</script>
+</body>
+</html>
