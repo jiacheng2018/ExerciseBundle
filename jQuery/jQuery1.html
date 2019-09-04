@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script   src="https://code.jquery.com/jquery-3.4.1.js"   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="   crossorigin="anonymous"></script>
+	<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
+	<style>
+		body{
+			text-align: center;
+			background: #48cfad;
+			color: #fff;
+		}
+		.block{
+			width: 31%;
+			margin: 1%;
+			float: left;
+		}
+		.merged{
+			margin-top: 100px;
+		}
+	</style>
+</head>
+<body>
+	<h1 class="revealOnScroll" data-animation="fadeInUp">Trigger a CSS animation</h1>
+	<h3 class="revealOnScroll" data-animation="lightSpeedin">title</h3>
+	<div class="merged">
+		<div class="block revealOnScroll" data-animation="flipInx" data-timeout="400">
+			<div class="image"></div>
+			<h4>Block 1</h4>
+		</div>
+		<div class="block revealOnScroll" data-animation="flipInx">
+			<div class="image"></div>
+			<h4>Block 2</h4>
+		</div>
+		<div class="block revealOnScroll" data-animation="flipInx">
+			<div class="image"></div>
+			<h4>Block 3</h4>
+		</div>
+	</div>
+	<br/>
+	<br/>
+	<script>
+		$(function(){
+          var $window=$(window),
+          win_height_padded=$window.height()*1.1,
+          isTouch=Modernizr.touch();
+          if(isTouch){
+          	
+          }
+		})
+	</script>
+</body>
+</html>

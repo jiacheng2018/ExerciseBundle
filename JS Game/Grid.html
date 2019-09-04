@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.container{
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-gap: 10px;
+            min-height: 400px;
+            grid-template-columns: repeat(auto-fit,minmax(60px,1fr));
+			font-size: 2rem;
+		}
+		.container div:nth-child(1){
+			background: yellow;
+		}
+		.container div:nth-child(2){
+			background: red;
+		}
+		.container div:nth-child(3){
+			background: pink;
+		}
+		.container div:nth-child(4){
+			background: blue;
+		}
+		.container div:nth-child(5){
+			background: orange;
+		}
+		.container div:nth-child(6){
+			background: pink;
+		}
+		.container_cla{
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-gap: 10px;
+            min-height: 400px;
+            grid-template-columns: repeat(auto-fill,800px);
+			font-size: 2rem;
+		}
+		.container_cla div:nth-child(1){
+			background: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="item">1</div>
+		<div class="item">2</div>
+		<div class="item">3</div>
+		<div class="item">4</div>
+		<div class="item">5</div>
+		<div class="item">6</div>
+	</div>
+	<div class="container_cla">
+		<div class="item">1</div>
+		<div class="item">2</div>
+		<div class="item">3</div>
+		<div class="item">4</div>
+		<div class="item">5</div>
+		<div class="item">6</div>
+		<div class="item">1</div>
+		<div class="item">2</div>
+		<div class="item">3</div>
+		<div class="item">4</div>
+		<div class="item">5</div>
+		<div class="item">6</div>
+		<div class="item">1</div>
+		<div class="item">2</div>
+		<div class="item">3</div>
+		<div class="item">4</div>
+		<div class="item">5</div>
+		<div class="item">6</div>
+	</div>
+</body>
+</html>

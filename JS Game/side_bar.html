@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	    <script src="https://kit.fontawesome.com/fc5b61a06d.js"></script>
+	    <style>
+	    	*{
+	    		margin: 0px;
+	    		padding: 0px;
+	    		box-sizing: border-box;
+	    	}
+	    	a{
+	    		
+	    		text-decoration: none;
+	    	}
+            .sidenav{
+            	height: 100%;
+            	width: 14rem;
+            	position: fixed;
+            	z-index: 1;
+            	top: 0;
+            	left: 0;
+            	background: #111;
+            	overflow-x:hidden;
+            }
+            .sidenav a,.sidenav button{
+            	color: grey;
+            	border: none;
+            	width: 100%;
+            	text-align: center;
+            	display: block;
+            	padding: 1rem;
+            	margin: 0.5rem;
+            	font-size: 1.5rem;
+            	cursor: pointer;
+            }
+            .sidenav a:hover,.sidenav button:hover{
+            	color: #f1f1f1
+            }
+            .dropdown-container{
+            	display: block;
+            	background: #262626;
+            }
+            .fa-caret-down{
+            	float: right;
+            	padding-right: 8px;
+            }
+            .active{
+            	background: green;
+            	color: white;
+            }
+            .dropdown-btn{
+            	display: none;
+            	background: #262626;
+            }
+	    </style>
+</head>
+<body>
+	<div class="sidenav">
+		<a href="">About</a>
+		<a href="">Services</a>
+		<a href="">Clients</a>
+		<a href="">Contacts</a>
+		<button class="dropdown-btn">
+			DropDown<i class="fa fa-caret-down"></i>
+		</button>
+		<div class="dropdown-container">
+			<a href="">Link 1</a>
+			<a href="">Link 2</a>
+			<a href="">Link 3</a>
+		</div>
+		<div class="main">
+			<h2>Sidebar Dropdown</h2>
+		</div>
+	</div>
+	<script>
+		var dropdown=document.querySelectorAll('.dropdown-btn');
+		var i;
+		console.log(dropdown.length)
+		for(i=0;i<dropdown.length;i++){
+			dropdown[i].addEventListener('click',function(){
+				this.classList.toggle("active");
+				var dropdownContent=this.nextElementSibling;
+				console.log(dropdownContent);
+				if(dropdownContent.style.display==='block'){
+					dropdownContent.style.display='none';
+				}else{
+					dropdownContent.style.display='block';
+				}
+			})
+		}
+	</script>
+</body>
+</html>

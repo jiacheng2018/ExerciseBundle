@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.container{
+			position: relative;
+			width: 50%;
+		}
+        img{
+        	display: block;
+        	height: 21rem;
+        	width: 100%;
+        }
+        .overlay{
+        	background: red;
+        	position: absolute;
+        	left: 0;
+        	bottom: 0;
+        	right: 0;
+        	width: 100%;
+        	height:100%;
+        	-webkit-transform:scale(0);
+        	transform: scale(0);
+        	transition: .3s ease;
+        }
+        .container:hover .overlay{
+             transform: scale(1);
+        }
+        .text{
+        	color: white;
+        	font-size: 2rem;
+        	/*text-align: center;*/
+        	position: absolute;
+        	top: 50%;
+        	left: 50%;
+        	transform: translate(-50%,-50%);
+        	text-align: center;
+
+        }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img src="./Img/delivery.jpg"  alt="" class="image">
+		<div class="overlay">
+			<div class="text">Hello World</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<label for="firstName">First Name: </label>
+		  <input placeholder="Type here" type="text" v-model="firstName" id="firstName">
+		  <br>
+		  <br>
+		  <label for="lastName">Last Name: </label>
+		  <input placeholder="Type here" type="text" v-model="lastName" id="lastName">
+		  <br>
+		  <br>
+		  <br>
+		  <p class="capitalize">Your name: <strong>{{ fullName }}</strong> </p>
+		  <p class="capitalize">Has <strong>{{ letterNumber }}</strong> letters.</p>
+		  <p>Your first name it is <strong>{{ palindrome ? '' : 'not' }}</strong> a palindrome.</p>
+	</div>
+	<script>
+		var vm=new Vue({
+			el:"#app",
+			data:{
+				firstname:"",
+				lastname:""
+			},
+			computed:{
+				fullName:function(){
+					return this.firstname+' '+this.lastname;
+				},
+				lastname:{
+					get:function(){
+						return this.firstname.length+this.lastname.length;
+					}
+				},
+				palindrome:{
+					get:function(){
+						return this.firstname===this.firstname.split('').reverse().join('');
+					}
+				}
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// async function timeout(){
+		// 	console.log('Hello world');
+		// }
+		// timeout().then(result=>{
+		// 	console.log(result);
+		// })
+		// console.log('execute first');
+		async function timeout(flag){
+			if(flag){
+				return 'hello world'
+			}else{
+				throw 'my god,failure'
+			}
+		}
+		console.log(timeout(true));
+		console.log(timeout(false));
+	</script>
+</body>
+</html>
